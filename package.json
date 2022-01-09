@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "homepage": "https://shivcodep.github.io/suduko-solver/",
   "scripts": {
     "css:build": "tailwind build ./src/style.css -o style.css"
   },
