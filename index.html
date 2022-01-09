@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suduko Solver</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .suduko_grid {
+            display: grid;
+            grid-template-columns: repeat(9, 60px);
+            grid-template-rows: repeat(9, 60px);
+        }
+    </style>
+</head>
+
+<body>
+    <header class="flex justify-between bg-gray-400 px-40 items-center py-5">
+        <div id="logo">
+            <h1 class="text-4xl font-bold">Suduku<span class="text-green-600">.</span>com</h1>
+        </div>
+        <div id="option" class="flex gap-12 text-xl font-medium items-center">
+            <a href="#" class="hover:text-gray-500">Suduko Solver</a>
+            <a href="#" class="hover:text-gray-500">Latest Suduko</a>
+            <a href="#" class="hover:text-gray-500">Blog</a>
+            <a href="#" class="hover:text-gray-500">Login</a>
+        </div>
+    </header>
+
+    <div class="my-20 w-11/12 m-auto">
+        <div class="w-1/2 m-auto text-center">
+            <h2 class="text-4xl font-bold">Suduku Solver</h2>
+        </div>
+        <div class="flex gap-5 justify-between w-4/5 m-auto my-16">
+            <div class="flex flex-col gap-10 items-center justify-center">
+                <form class="suduko_grid" id="input">
+                    <!-- question -->
+                    <input type="text" name="" id="1" class="border-solid border-2 px-2 text-xl"><input type="text"
+                        name="" id="2" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="3"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="4"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="5"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="6"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="7"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="8"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="9"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="10"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="11"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="12"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="13"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="14"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="15"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="16"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="17"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="18"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="19"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="20"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="21"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="22"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="23"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="24"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="25"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="26"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="27"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="28"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="29"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="30"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="31"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="32"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="33"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="34"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="35"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="36"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="37"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="38"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="39"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="40"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="41"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="42"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="43"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="44"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="45"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="46"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="47"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="48"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="49"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="50"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="51"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="52"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="53"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="54"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="55"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="56"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="57"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="58"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="59"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="60"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="61"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="62"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="63"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="64"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="65"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="66"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="67"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="68"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="69"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="70"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="71"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="72"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="73"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="74"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="75"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="76"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="77"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="78"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="79"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="80"
+                        class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="81"
+                        class="border-solid border-2 px-2 text-xl">
+
+                </form>
+                <button onclick="getSuduku(event)"
+                    class="px-4 border-solid border-2 border-blue-500 rounded text-xl text-blue-600 font-medium">Submit</button>
+            </div>
+            <div class="text-4xl my-44">&rarr;</div>
+            <form class="suduko_grid" id="answer">
+                <!-- answer -->
+                <input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl"><input type="text" name="" id="" class="border-solid border-2 px-2 text-xl">
+
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+
+
+    function getSuduku(e) {
+
+        e.preventDefault();
+
+        var Suduko = document.getElementById("input");
+        var answer = document.getElementById("answer");
+
+        var arr_suduko = [];
+        var row = [];
+        var r = 0;
+
+        for (var i = 0; i < 81; i++) {
+
+            row[r] = Number(Suduko[i].value);
+            r++;
+
+            if (r == 9) {
+                arr_suduko.push(row);
+                row = [];
+                r = 0;
+            }
+
+        }
+
+        console.log(arr_suduko)
+
+        var answer_arr = runProgram(arr_suduko);
+
+        var a = 0;
+
+        for(var i=0; i<9; i++) {
+            for(var j=0; j<9; j++) {
+
+                answer[a].value = answer_arr[i][j];
+                a++;
+
+            }
+
+        }
+    }
+
+    // suduko solver code 
+
+    function check(board, i, j, p) {
+        let r = (Math.floor(i / 3)) * 3;
+        let c = (Math.floor(j / 3)) * 3;
+        // console.log(r, c)
+        //condition for small square
+        for (let k = r; k < r + 3; k++) {
+            for (let l = c; l < c + 3; l++) {
+                if (board[k][l] === p) {
+                    return false;
+                }
+            }
+        }
+        //condition for row
+        for (let m = 0; m < 9; m++) {
+            if (board[i][m] === p) {
+                return false;
+            }
+        }
+        //condition for column
+        for (let a = 0; a < 9; a++) {
+            if (board[a][j] === p) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+
+    function runProgram(board) {
+        // Write code here
+        var tofill = [];
+        for (let i = 0; i < 9; i++) {
+            for (let j = 0; j < 9; j++) {
+                if (board[i][j] === 0) {
+                    tofill.push([i, j]);
+                }
+            }
+        }
+        // console.log(board);
+        // console.log(tofill);
+        let possible = solve(0);
+        if (possible) {
+            return board;
+        } else {
+            return -1;
+        }
+
+        function solve(cur) {
+            if (cur === tofill.length) {
+                return true;
+            }
+            // console.log(cur)
+            let [i, j] = [tofill[cur][0], tofill[cur][1]];
+            // console.log(i,j);
+            for (let p = 1; p < 10; p++) {
+                // console.log(check(board, i, j, p))
+                if (check(board, i, j, p)) {
+                    board[i][j] = p;
+                    let a = solve(cur + 1);
+                    if (a) {
+                        return true;
+                    }
+                    board[i][j] = 0;
+                }
+            }
+            return false;
+
+        }
+    }
+
+
+
+
+
+</script>

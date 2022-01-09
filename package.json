@@ -1,0 +1,17 @@
+{
+  "name": "suduko-ui",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "homepage": "https://shivcodep.github.io/suduko-solver/",
+  "scripts": {
+    "css:build": "tailwind build ./src/style.css -o style.css",
+    "deploy":"gh-pages -d ./"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "gh-pages": "^3.2.3",
+    "tailwindcss": "^2.2.19"
+  }
+}
